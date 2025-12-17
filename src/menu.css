@@ -1,0 +1,16 @@
+.menuList{
+  display:flex;
+  flex-direction: column;
+  width: 15vw;
+  height:100vh;
+  background-color: #190379;   
+  align-items: center;
+}
+.ul-menu{
+  List-style-type: none;
+}
+.logo{
+  color:white;
+  margin-bottom:20px;
+  padding: 10px 0 0 0 !important;
+}
