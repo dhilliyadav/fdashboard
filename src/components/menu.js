@@ -1,14 +1,12 @@
 import React from 'react';
 import '../menu.css';
-import {Link} from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 function Menu(){
     const menuItems=[
         {name : 'DashBoard' , path:'/'},
         {name : 'Projects' , path:'/projects'},
-        {name: 'teams' , path:'/temas'},
+        {name: 'teams' , path:'/teams'},
         {name: 'Calender' , path:'/calender'},
-        {name : 'settings' , path:'/settings'},
         {name : 'Documents' , path:'/documents'},
         {name : 'Reports' , path:'/reports'},
         {name : 'Settings' , path:'/Settings'}
@@ -17,14 +15,16 @@ function Menu(){
         <>
         <div className='menu-container'>
             <div className='menuList'>
-                <header className='logo'><h2>LoGo</h2></header>
+                <header className='logo'><h2>LoGo</h2>
+                </header>
                 <ul className='ul-menu'>
                     {
                         menuItems.map((item)=>(<li key={item.path}>
                             <NavLink to={item.path}
-                            clasName={({isActive})=> isActive ? 'active' : undefined}>
+                            clasName={({isActive})=> isActive ? 'active' : undefined} className='nav-link'>
                                 {item.name}
                             </NavLink>
+                         
                         </li>))
                     }
                 </ul>
