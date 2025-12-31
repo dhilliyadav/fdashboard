@@ -1,6 +1,104 @@
 /*dashboard/src/App.css*/
-.dashboard-container{
+.dashBoard-container,.projects-container , .settings-container{
 position:absolute;
 top: 0;
 left:16vw;
+display: grid;
+height: 100vh;
+width: 84vw;
+background-color: rgb(240, 240, 240);
+overflow: scroll;
 }
+.doughNutComponent{
+    margin: auto;
+    color: rgb(0, 4, 255);
+    text-shadow: 1px 5px 2px rgba(35, 4, 144, 0.2);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    position:absolute;
+    padding: 10px;
+    left: 10px;
+    top:50px;
+    border-radius: 10px;
+    height: 350px;
+    width: 300px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+.barChartComponent{
+    position:absolute;
+    top:50px;
+    left: 350px;
+    padding: 10px;
+    height: 350px;
+    width: 400px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.barChartOverlFlow{
+    text-align: center;
+    align-items: center;
+    overflow-x: scroll;
+}
+.LineChartComponent{
+    position:absolute;
+    top:50px;
+    left: 800px;
+    padding: 10px;
+    height: 350px;
+    width: 400px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    text-align: center;
+}
+/*projects/src/components/projects.css*/
+.projectsList{   display: flex;
+    flex-direction: column;
+    position: relative;
+    left: auto;
+    top: auto;
+    border-radius: 10px;
+    background-color: rgb(64, 2, 135);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    width: max-content;
+    padding: 20px;
+    
+}
+.projectNames{
+    background-color: rgb(189, 194, 199);
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    border:3px solid rgb(226, 214, 214);
+    font-size: 18px;
+    font-weight: 500;
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 10px;
+    justify-content: space-evenly;
+
+}
+.projectNames:hover{
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+.projectNames:active{
+    transform: scale(0.98);
+    transition: all 0.1s ease-in-out;
+}
+.projectDetails{
+    position: absolute;
+    left: 230px;
+    top: 90px;
+    height:100vh;
+    width: 65vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+}
+
