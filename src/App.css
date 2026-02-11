@@ -101,4 +101,7 @@ overflow: scroll;
     border-radius: 10px;
     padding: 20px;
 }
+.container::-webkit-scrollbar {
+    display: none;
+}
 
