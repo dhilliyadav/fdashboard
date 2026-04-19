@@ -8,6 +8,7 @@ function SignUp(){
         <div className='signUp-container'>
             <h2>Sign Up Component</h2>
             <h2>Please create an account</h2>
+            
             <>
             <LogIn />
             </>
