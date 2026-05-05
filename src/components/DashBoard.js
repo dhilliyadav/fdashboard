@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import '../App.css';
 import { Bar, Doughnut,Line } from 'react-chartjs-2'; 
 import {
@@ -37,16 +38,38 @@ const BarData = {
       hoverBorderColor:data.datasets[0].backgroundColor,
     }
   ]
-};
 
+};
 function DashBoard() {
+  const [tokenData, setTokenData] = useState("");
+  useEffect(() => {
+    const fecthData = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        console.log("token accesed ", token)
+        const response = await axios.get('http://localhost:5000/api/dashboard', {
+          headers: {
+            Authorization: `Bearer ${token}` // ` ` are template literals
+          }
+        })
+        console.log("Immediate to authorization in the try block  ")
+        console.log(setTokenData(response.data.message))
+      }
+catch (err)
+{
+   console.log("error occurred when trying to get token Authorization", err)
+}}
+fecthData();
+}
+,[]);
   return (
     <>
+    <script src="http://localhost:8097"></script>
       <div className='dashBoard-container'>
         <div className="doughNut">
         <div className='doughNutComponent'>
          <h2> <Doughnut data={data} />
-          👉Projects</h2>
+          Projects</h2>
           </div>
         </div>
 
@@ -62,6 +85,9 @@ LineChartComponent
   
 </h2>
         </div>
+        
+          <footer>{tokenData}</footer>
+        
       </div>  
     </>
   );
