@@ -1,10 +1,10 @@
 import React from "react";
-//import axios from 'axios';
-//import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 import SignUp from "./signUp.js";
 import './registration.css';
 function LogIn(){
-   // const navigate = useNavigate();
+   const navigate = useNavigate();
      const [email,setEmail]=React.useState("");
      const [userName,setUserName]=React.useState('')
     const [password,setPassword]=React.useState("");
@@ -14,19 +14,19 @@ function LogIn(){
         console.log("email: ",email);
         console.log("Password: ",password);
         
-        // try{
-        //     console.log("entered into try block");
-        //     const response = await axios.post('http://localhost:5000/api/auth/login',{email,password});
-        //     console.log("axios block", response);
-        //     localStorage.setItem("token", response.data.token);
-        //     alert("login successful")
-        //    navigate('/');
+        try{
+            console.log("entered into try block");
+            const response = await axios.post('http://localhost:5000/api/auth/login',{email,password});
+            console.log("axios block", response);
+            localStorage.setItem("token", response.data.token);
+            alert("login successful")
+           navigate('/');
 
-        // } catch(err)
-        // { 
-        //     console.log(" login Failed");
-        //     console.log("error occured", err)
-        // }
+        } catch(err)
+        { 
+            console.log(" login Failed");
+            console.log("error occured", err)
+        }
     }
 
     return( 

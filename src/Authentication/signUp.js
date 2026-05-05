@@ -1,6 +1,5 @@
 import React from 'react';
 import './registration.css';
-import LogIn from './logIn.js';
 function SignUp(){
     return(
         
